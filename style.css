@@ -1,0 +1,208 @@
+@keyframes hoverAnimation {
+    0% { transform: translateX(20px) rotate(20deg) scale(1.0); transform-origin: center;}
+    50% { transform: translateX(200px) rotate(-40deg) scale(1.1); transform-origin: center;}
+    100% { transform: translateX(198px) rotate(-40deg) scale(1.1); transform-origin: center;}
+}
+
+@keyframes playerEnter {
+    0% { transform: translateY(-500px);}
+    50% { transform: translateY(-95px);}
+    100% { transform: translateY(800px);}
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background-color: hsl(60, 30%, 0%); /* pure black in HSL */
+    overflow: hidden;
+}
+
+.playerContainer {
+    position: absolute;   /* you can move the whole unit easily */
+    top: -500px;
+    left: 600px;
+    width: 600px;        /* adjust to fit your screen + buttons */
+    height: 400px;       /* adjust as needed */
+}
+.cassettes{
+    position: absolute;   
+    top: -100px;
+    left: -40px;
+    width: 600px;        /* adjust to fit your screen + buttons */
+    height: 400px; 
+    
+}
+#screen {
+    position: absolute;   /* or relative to wherever you want it */
+    top: -170px;
+    left: 0px;
+    width: 516px;
+    height: 296px;
+    background-color: #ffffff;   /* dark “screen” */
+    border: 2px solid #555;   /* frame/border */
+    border-radius: 10px;      /* optional rounded corners */
+    color: rgb(0, 0, 0);    
+    margin: 4px auto;          /* green text for retro vibe */
+    font-family: monospace;
+    font-size: large;   /* like an old screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;       /* space between text and edges */
+    box-sizing: border-box;
+    z-index: 9999;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+#player {
+    position: absolute;
+    left: -60px;
+    top: -400px;   
+}
+
+#switchlabel {
+    position: absolute;
+    top: 215px;
+    left: 42px;        
+    z-index: 9999;
+    font-family: monospace;
+    font-weight: bold;
+    color: black;
+}
+#playlabel {
+    position: absolute;
+    top: 215px;
+    left: 130px;        
+    z-index: 9999;
+    font-family: monospace;
+    font-weight: bold;
+    color: black;
+}
+#pauselabel {
+    position: absolute;
+    top: 215px;
+    left: 200px;        
+    z-index: 9999;
+    font-family: monospace;
+    font-weight: bold;
+    color: black;
+
+}
+
+
+#switch {
+    position: absolute;
+    top: 250px;  
+    left: 30px;
+    height: 120px;
+    width: 75px;
+    background: transparent;
+    z-index: 999;
+}
+
+#play {
+    position: absolute;
+    top: 250px;  
+    left: 108px;
+    height: 120px;
+    width: 75px;
+    background: transparent;
+    z-index: 999;
+}
+
+#pause {
+    position: absolute;
+    top: 250px;
+    left: 185px;  /* offset to the right */
+    height: 120px;
+    width: 72px;
+    background: transparent;
+    z-index: 999;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+}
+
+
+
+#sagada, #misteryoso, #tingin, #ikot, #love-story, #style, #sinta, #wildest-dream, #estranghero {
+    position: absolute;
+    height: 80px;
+    width: 450px;   
+    left: 0px;
+    rotate: 0deg;
+    display: block;
+    
+    
+}
+#sagada img, #misteryoso img, #tingin img, #ikot img, #love-story img, #style img, #sinta img, #wildest-dream img, #estranghero img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    rotate: 25deg;
+    height: 150px;
+    width: auto;   
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+#sagada:hover img,  
+#misteryoso:hover img,
+#tingin:hover img,
+#ikot:hover img,
+#love-story:hover img,
+#style:hover img,
+#sinta:hover img,
+#wildest-dream:hover img,
+#estranghero:hover img {
+    transform: translate(200px, -40px) rotate(-25deg) scale(1.3);
+    
+}
+
+#love-story {
+    top: 80px;
+    z-index: 10;
+}
+#tingin {
+    top: 160px;
+    z-index: 12;
+}
+#sagada {
+    top: 240px;
+    z-index: 13;
+}
+#style {
+    top: 320px;
+    z-index: 14;
+}
+#sinta {
+    top: 400px;
+    z-index: 15;
+}
+#wildest-dream {
+    top: 480px;
+    z-index: 16;
+}
+#misteryoso {
+    top: 560px;
+    z-index: 17;
+}
+#estranghero {
+    top: 640px;
+    z-index: 18;
+}
+#ikot {
+    top: 720px;
+    z-index: 19;
+}
