@@ -1,5 +1,5 @@
 let currentSong = null;
-let queqedSong;
+let queuedSong;
 
 let playing = false; 
 
@@ -19,11 +19,7 @@ const hoverSound = new Audio('assets/audio/scroll.wav')
 const buttonPress = new Audio('assets/audio/button press.wav')
 
 const buttons = document.querySelectorAll('button');
-const sagada = document.getElementById('sagada');
-const misteryoso = document.getElementById('misteryoso');
-const hoverZoneRight = document.getElementById('hoverZoneRight');
 const playerContainer = document.querySelector('.playerContainer');
-const body = document.body;
 
 let currentIndex = 0; // tracks which paragraph is showing
 const screenText = document.getElementById("screen-text");
@@ -56,13 +52,13 @@ buttons.forEach(button => {
 
     // If it's one of the cassettes
     if (songMap[clickedId]) {
-        queqedSong = songMap[clickedId];
+        queuedSong = songMap[clickedId];
         insertTape.play();
         playerContainer.style.animation = 'playerEnter 1s forwards';
     }
 
     // Play / pause logic
-    if (clickedId === 'play') {
+    if (clickedId === 'play' && queuedSong) {
         buttonPress.play();
 
         let lightness = 0; // start at black
@@ -81,13 +77,13 @@ buttons.forEach(button => {
             currentSong.pause();
             currentSong.currentTime = 0;
         }
-        currentSong = queqedSong;
+        currentSong = queuedSong;
         currentSong.play();
         playing = true;
 
         screenText.textContent = `Hiii loveeyyyy^o^\n \n
-I know you've been looking forward to this for a few days na hehe, pero I'll be honest, most of the time di pa rin ako sure kung ano gagawin ko ToT \n \n
-At first, sa Minecraft lang plano ko but na carried away ako and nagawa ko 'to huhu. Pero I enjoyed it naman (Kahit walang tulog) and I hope you enjoy this too>.< \n \n (Click the red button sa baba)`;
+        I know you've been looking forward to this for a few days na hehe, pero I'll be honest, most of the time di pa rin ako sure kung ano gagawin ko ToT \n \n
+        At first, sa Minecraft lang plano ko but na carried away ako and nagawa ko 'to huhu. Pero I enjoyed it naman (Kahit walang tulog) and I hope you enjoy this too>.< \n \n (Click the red button sa baba)`;
     } 
     else if (clickedId === 'pause') {
         buttonPress.play();
